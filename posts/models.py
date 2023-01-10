@@ -7,21 +7,11 @@ class Post(models.Model):
     Post model, related to 'owner', i.e. a User instance.
     Default image set so that we can always reference image.url.
     """
-    image_filter_choices = [
-        ('1977', '1977'),
-        ('brannan', 'Brannan'),
-        ('earlybird', 'Earlybird'),
-        ('hudson', 'Hudson'),
-        ('inkwell', 'Inkwell'),
-        ('lofi', 'Lo-Fi'),
-        ('kelvin', 'Kelvin'),
-        ('normal', 'Normal'),
-        ('nashville', 'Nashville'),
-        ('rise', 'Rise'),
-        ('toaster', 'Toaster'),
-        ('valencia', 'Valencia'),
-        ('walden', 'Walden'),
-        ('xpro2', 'X-pro II')
+    category_choices = [
+        ('HTML', 'HTML'),
+        ('CSS', 'CSS'),
+        ('JavaScript', 'JavaScript'),
+        ('React', 'React'),
     ]
 
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -29,11 +19,9 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=255)
     content = models.TextField(blank=True)
+    category = models.CharField(max_length=50, choices=category_choices)
     image = models.ImageField(
         upload_to='images/', default='../m3efn2fnj5y2syaro1lk', blank=True
-    )
-    image_filter = models.CharField(
-        max_length=32, choices=image_filter_choices, default='normal'
     )
 
     class Meta:
