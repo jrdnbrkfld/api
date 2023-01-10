@@ -8,10 +8,10 @@ class Post(models.Model):
     Default image set so that we can always reference image.url.
     """
     category_choices = [
-        ('html', 'HTML'),
-        ('css', 'CSS'),
-        ('javascript', 'JavaScript'),
-        ('react', 'React'),
+        ('HTML', 'HTML'),
+        ('CSS', 'CSS'),
+        ('JavaScript', 'JavaScript'),
+        ('React', 'React'),
     ]
 
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
