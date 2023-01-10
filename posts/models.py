@@ -8,10 +8,10 @@ class Post(models.Model):
     Default image set so that we can always reference image.url.
     """
     category_choices = [
-        ('HTML', 'HTML'),
-        ('CSS', 'CSS'),
-        ('JavaScript', 'JavaScript'),
-        ('React', 'React'),
+        ('html', 'HTML'),
+        ('css', 'CSS'),
+        ('javascript', 'JavaScript'),
+        ('react', 'React'),
     ]
 
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -19,7 +19,8 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=255)
     content = models.TextField(blank=True)
-    category = models.CharField(max_length=50, choices=category_choices)
+    category = models.CharField(
+        max_length=50, choices=category_choices, null=True)
     image = models.ImageField(
         upload_to='images/', default='../m3efn2fnj5y2syaro1lk', blank=True
     )
