@@ -75,6 +75,7 @@ The models shown were created to represent the database model structure of the a
 - Django
 
 ### Libraries & Tools
+
 <details>
 
 - [Dbdiagram.io](https://dbdiagram.io/home) was used for the database diagram
@@ -87,10 +88,32 @@ The models shown were created to represent the database model structure of the a
 - [PostgreSQL](https://www.postgresql.org/) – deployed project on Render uses a PostgreSQL database
 - [Cloudinary](https://cloudinary.com/) to store static files
 - [Pillow](https://pillow.readthedocs.io/en/stable/) was used for image processing and validation
+- [Heroku](https://dashboard.heroku.com/) was used for hosting
 
 </details>
 
 ## Validation
 
 ### PEP8 Validation
-[PEP8](http://pep8online.com/) Validation Service was used to check the code for PEP8 requirements. All the code passes with no errors or warnings.
+
+[PEP8CI](https://pep8ci.herokuapp.com/) was used to check the code for PEP8 requirements. All the code passes with no errors or warnings.
+
+## Testing
+
+I was able to complete the following tests for this project:
+
+| **Test** | **Action**                   | **Expected Result**                                   | **Actual Result** |
+| -------- | ---------------------------- | ----------------------------------------------------- | ----------------- |
+| User     | Create, update & delete user | A user can be created, edited or deleted              | Works as expected |
+| User     | Change permissions           | User permissions can be updated                       | Works as expected |
+| Profile  | Create, update & delete      | User profile can be created, edited or deleted        | Works as expected |
+| Post     | Create, update & delete      | A post can be created, edited or deleted              | Works as expected |
+| Comment  | Create, update & delete      | A comment can be created, edited or deleted           | Works as expected |
+| Like     | Create & delete              | A like can be created or deleted (like / unlike post) | Works as expected |
+| Follower | Create & delete              | Follow or unfollow user                               | Works as expected |
+
+## Credits
+
+### Code
+
+This project was created with reference to Code Institute's Django REST API walkthrough project [Moments](https://github.com/Code-Institute-Solutions/drf-api).
